@@ -26,7 +26,18 @@ public class Main {
 		biblio.addElem(magazine1);
 		biblio.addElem(magazine2);
 
-		String codiceISBN = "9781234567890"; // Codice ISBN generato casualmente
+		String codiceISBNToRemove = "9c911c46-9343-487b-a90c-e0dd1cab0462";
+		boolean isRemoved = biblio.removeElementByISBN(codiceISBNToRemove);
+		if (isRemoved) {
+			System.out.println();
+			log.info("Elemento rimosso con successo.");
+		} else {
+			System.out.println();
+			log.error("Elemento non trovato nell'archivio.");
+			System.out.println("----------------------------------------");
+		}
+
+		String codiceISBN = "9c911c46-9343-487b-a90c-e0dd1cab0462"; // Codice ISBN generato casualmente
 		Optional<Element> elementoOptional = biblio.searchForISBN(codiceISBN);
 
 		System.out.println();
@@ -68,5 +79,7 @@ public class Main {
 		} catch (IOException | ClassNotFoundException e) {
 			log.error("Errore durante il caricamento dell'archivio dal disco", e);
 		}
+
 	}
+
 }
