@@ -1,10 +1,13 @@
 package CatalogoBib;
 
+import java.io.File;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
+import org.apache.commons.io.FileUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -61,25 +64,28 @@ public class Main {
 		System.out.println("------------------------------------------");
 
 		String nameFile = "src/CatalogoBib/archivio.dat";
+
+		// Salvataggio su disco dell'archivio
 		try {
-			biblio.saveToDisk(nameFile);
+			String archivioString = FileUtils.readFileToString(new File(nameFile), StandardCharsets.UTF_8);
+			FileUtils.writeStringToFile(new File(nameFile), archivioString + System.lineSeparator(),
+					StandardCharsets.UTF_8, true);
 			System.out.println();
 			log.info("Archivio salvato su disco con nome: {}", nameFile);
 			System.out.println("----------------------------------------");
 		} catch (IOException e) {
 			System.out.println();
 			log.error("Errore durante il salvataggio dell'archivio su disco", e);
-
 		}
 
+		// Caricamento dal disco dell'archivio
 		try {
-			biblio.loadToDisk(nameFile);
+			String archivioString = FileUtils.readFileToString(new File(nameFile), StandardCharsets.UTF_8);
 			System.out.println();
 			log.info("Archivio caricato dal disco con nome: {}", nameFile);
-		} catch (IOException | ClassNotFoundException e) {
+		} catch (IOException e) {
 			log.error("Errore durante il caricamento dell'archivio dal disco", e);
 		}
 
 	}
-
 }

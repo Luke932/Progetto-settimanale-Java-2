@@ -1,10 +1,5 @@
 package CatalogoBib;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -47,17 +42,17 @@ public class Archivio implements Serializable {
 				.collect(Collectors.toList());
 	}
 
-	public void saveToDisk(String nameFile) throws IOException {
-		try (ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream(nameFile))) {
-			outputStream.writeObject(task);
-		}
-	}
-
-	@SuppressWarnings("unchecked")
-	public void loadToDisk(String nameFile) throws IOException, ClassNotFoundException {
-		try (ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream(nameFile))) {
-			task = (List<Element>) inputStream.readObject();
-		}
-	}
+//	public void saveToDisk(String nameFile) throws IOException {
+//		try (ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream(nameFile))) {
+//			outputStream.writeObject(task);
+//		}
+//	}
+//
+//	@SuppressWarnings("unchecked")
+//	public void loadToDisk(String nameFile) throws IOException, ClassNotFoundException {
+//		try (ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream(nameFile))) {
+//			task = (List<Element>) inputStream.readObject();
+//		}
+//	}
 
 }
