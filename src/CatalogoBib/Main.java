@@ -11,18 +11,21 @@ import org.apache.commons.io.FileUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.github.javafaker.Faker;
+
 public class Main {
 	static Logger log = LoggerFactory.getLogger(Archivio.class);
 
 	public static void main(String[] args) {
 		Archivio biblio = new Archivio();
 
-		Libri book1 = new Libri("Il signore degli anelli", LocalDate.of(1954, 5, 21), 456, "J. R. R. Tolkien",
-				"Fantasy");
-		Libri book2 = new Libri("Harry Potter", LocalDate.of(1998, 7, 23), 378, "Joanne Rowling", "Fantasy");
+		Faker faker = new Faker();
 
-		Riviste magazine1 = new Riviste("Focus", LocalDate.of(1998, 8, 25), 45, Periodicità.SETTIMANALE);
-		Riviste magazine2 = new Riviste("Ciak Magazine", LocalDate.of(1985, 12, 10), 30, Periodicità.MENSILE);
+		Libri book1 = new Libri(faker.book().title(), LocalDate.of(1954, 5, 21), 456, faker.book().author(), "Fantasy");
+		Libri book2 = new Libri(faker.book().title(), LocalDate.of(1998, 7, 23), 378, faker.book().author(), "Fantasy");
+
+		Riviste magazine1 = new Riviste(faker.book().title(), LocalDate.of(1998, 8, 25), 45, Periodicità.SETTIMANALE);
+		Riviste magazine2 = new Riviste(faker.book().title(), LocalDate.of(1985, 12, 10), 30, Periodicità.MENSILE);
 
 		biblio.addElem(book1);
 		biblio.addElem(book2);
@@ -57,7 +60,7 @@ public class Main {
 		log.info("Elementi trovati per anno di pubblicazione {}: {}", yearSearch, itemForYear);
 		System.out.println("-----------------------------------------");
 
-		String authorSearch = "Joanne Rowling";
+		String authorSearch = faker.book().author();
 		List<Element> itemForAuthor = biblio.searchForAuthor(authorSearch);
 		System.out.println();
 		log.info("Elementi trovati per autore {}: {}", authorSearch, itemForAuthor);

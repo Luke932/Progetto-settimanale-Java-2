@@ -1,4 +1,4 @@
-Libri{codiceISBN='e22a5ab3-cb69-45c5-b190-f5f8e2d698cb', titolo='Il signore degli anelli', annoPubblicazione=1954-05-21, numeroPagine=456, autore='J. R. R. Tolkien', genere='Fantasy'}
-Libri{codiceISBN='3dcad574-7716-484d-a5e1-265c45aba93d', titolo='Harry Potter', annoPubblicazione=1998-07-23, numeroPagine=378, autore='Joanne Rowling', genere='Fantasy'}
-Rivista{codiceISBN='4be1d183-9061-404c-89b8-7a69344b2070', titolo='Focus', annoPubblicazione=1998-08-25, numeroPagine=45, periodicità=SETTIMANALE}
-Rivista{codiceISBN='b74b4d6d-5a2c-4b9a-a8d3-be5cea5dd75e', titolo='Ciak Magazine', annoPubblicazione=1985-12-10, numeroPagine=30, periodicità=MENSILE}
+Libri{codiceISBN='a35d67e6-0c36-4470-87a3-1097dd33431c', titolo='Frequent Hearses', annoPubblicazione=1954-05-21, numeroPagine=456, autore='Dr. Filiberto Rowe', genere='Fantasy'}
+Libri{codiceISBN='346473d4-996b-41b0-b8c7-303c87246ebb', titolo='I Know Why the Caged Bird Sings', annoPubblicazione=1998-07-23, numeroPagine=378, autore='Gary Wintheiser', genere='Fantasy'}
+Rivista{codiceISBN='a0138c74-1916-45ba-bf71-b374c221ee33', titolo='His Dark Materials', annoPubblicazione=1998-08-25, numeroPagine=45, periodicità=SETTIMANALE}
+Rivista{codiceISBN='93d8bdf8-e9dc-4f96-81ac-fe447dc0218b', titolo='Behold the Man', annoPubblicazione=1985-12-10, numeroPagine=30, periodicità=MENSILE}
