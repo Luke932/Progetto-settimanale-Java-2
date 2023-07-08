@@ -67,9 +67,8 @@ public class Main {
 
 		// Salvataggio su disco dell'archivio
 		try {
-			String archivioString = FileUtils.readFileToString(new File(nameFile), StandardCharsets.UTF_8);
-			FileUtils.writeStringToFile(new File(nameFile), archivioString + System.lineSeparator(),
-					StandardCharsets.UTF_8, true);
+			String archivioString = biblio.toString(); // Ottieni la rappresentazione testuale dell'archivio
+			FileUtils.writeStringToFile(new File(nameFile), archivioString, StandardCharsets.UTF_8);
 			System.out.println();
 			log.info("Archivio salvato su disco con nome: {}", nameFile);
 			System.out.println("----------------------------------------");
@@ -83,6 +82,9 @@ public class Main {
 			String archivioString = FileUtils.readFileToString(new File(nameFile), StandardCharsets.UTF_8);
 			System.out.println();
 			log.info("Archivio caricato dal disco con nome: {}", nameFile);
+			// Puoi fare ulteriori elaborazioni sulla stringa dell'archivio caricato se
+			// necessario
+			System.out.println(archivioString);
 		} catch (IOException e) {
 			log.error("Errore durante il caricamento dell'archivio dal disco", e);
 		}

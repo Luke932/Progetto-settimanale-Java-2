@@ -1,18 +1,16 @@
 package CatalogoBib;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-public class Archivio implements Serializable {
+public class Archivio {
 
 	/**
 	 * 
 	 */
-	@SuppressWarnings("unchecked")
-	private static final long serialVersionUID = 1L;
+
 	private List<Element> task;
 
 	public Archivio() {
@@ -40,6 +38,15 @@ public class Archivio implements Serializable {
 	public List<Element> searchForAuthor(String autore) {
 		return task.stream().filter(item -> item instanceof Libri && ((Libri) item).getAutore().equals(autore))
 				.collect(Collectors.toList());
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		for (Element item : task) {
+			sb.append(item.toString()).append("\n");
+		}
+		return sb.toString();
 	}
 
 //	public void saveToDisk(String nameFile) throws IOException {

@@ -1,10 +1,8 @@
 package CatalogoBib;
 
-import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Libri extends Element implements Serializable {
-	private static final long serialVersionUID = 1L;
+public class Libri extends Element {
 	private String autore;
 	private String genere;
 

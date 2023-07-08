@@ -1,14 +1,10 @@
 package CatalogoBib;
 
-import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.UUID;
 
-public abstract class Element implements Serializable {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+public abstract class Element {
+
 	private String codiceISBN;
 	private String titolo;
 	private LocalDate yearPub;
